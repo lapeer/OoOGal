@@ -8,7 +8,7 @@ class Galaxy(object):
     """
 
     def __init__(self, name = None, right_ascension = None, 
-                 declination = None):
+                 declination = None, redshift = None):
         
         self.name = name 
 
@@ -16,10 +16,12 @@ class Galaxy(object):
 
         self.Dec = declination 
 
+        self.redshift = redshift 
+
         return 
 
 
-    def init_galaxy_from_dict(self):
+    def init_galaxy_from_file(self):
 
         
         '''
@@ -27,5 +29,24 @@ class Galaxy(object):
         '''
 
         return 
+    
+    def query_mast(self):
+
+
+        '''
+        Queries MAST to check available data 
+        '''
+        return 
+    
+    def check_all_data(self):
+
+        '''
+        Searches all available data
+        '''
+
+        
+    
+
+
 
         
