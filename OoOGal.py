@@ -10,6 +10,7 @@ class Galaxy(object):
     def __init__(self, name = None, right_ascension = None, 
                  declination = None, redshift = None):
         
+        
         self.name = name 
 
         self.RA = right_ascension 
@@ -27,6 +28,7 @@ class Galaxy(object):
         '''
         Initalize a Galaxy object based on a list of properties 
         '''
+        
 
         return 
     
@@ -48,5 +50,14 @@ class Galaxy(object):
     
 
 
+
+        
+    def query_ned(self):
+        '''
+        Query galaxy properties on NED. 
+        '''
+
+        gal_name = str(self.name)
+    
 
         
