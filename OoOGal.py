@@ -21,43 +21,5 @@ class Galaxy(object):
 
         return 
 
-
-    def init_galaxy_from_file(self):
-
-        
-        '''
-        Initalize a Galaxy object based on a list of properties 
-        '''
-        
-
-        return 
     
-    def query_mast(self):
-
-
-        '''
-        Queries MAST to check available data 
-        '''
-        return 
     
-    def check_all_data(self):
-
-        '''
-        Searches all available data
-        '''
-
-        
-    
-
-
-
-        
-    def query_ned(self):
-        '''
-        Query galaxy properties on NED. 
-        '''
-
-        gal_name = str(self.name)
-    
-
-        
