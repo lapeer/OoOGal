@@ -1,2 +1,2 @@
 # OoOGal
-An object oriented approach to extragalactic science! 
+A simple framework to check what available data exists for a given galaxy.
