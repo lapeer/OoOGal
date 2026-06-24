@@ -6,4 +6,4 @@ build_backend = "setuptools.build_meta"
 name = "OoOGal"
 version = "0.0.1"
 
-dependencies = ["numpy", "astroquery",]
+dependencies = ["numpy", "astroquery","astropy"]
