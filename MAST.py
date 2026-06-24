@@ -2,7 +2,7 @@ import numpy as np
 from astroquery.mast import Observations
 from astroquery.mast import Mast
 from astroquery.mast import MastMissions
-
+import astropy.table
 
 from OoOGal import * 
 
@@ -36,20 +36,37 @@ def do_query_mast(Galaxy):
         missions = MastMissions(mission = telescope)
 
         if telescope == 'HST':
-            select_cols = ['sci_data_set_name', 'sci_instrume', 'sci_aper_1234', ' sci_spec_1234', 'sci_actual_duration', 'sci_central_wavelength']
-            results = missions.query_object(name, sci_instrume = instrument)
+            select_cols = ['sci_data_set_name', 'sci_instrume', 'sci_aper_1234', 'sci_spec_1234', 'sci_actual_duration', 'sci_central_wavelength', 
+                           'sci_pep_id']
+            results = missions.query_object(name, sci_instrume = instrument,  select_cols = select_cols_hst)
             
             
         else: 
             select_cols = ['instrume', 'opticalElements', 'duration', 'program']
-            results = missions.query_object(name, instrume = instrument)
+            results = missions.query_object(name, instrume = instrument, select_cols = select_cols_jwst)
+        
 
         results_arr.append(results)
         
 
-        instru_list = results['']
+        #renaming column names to more comprehensible headers
+        hst_results = results_arr[0]
+        jwst_results = results_arr[1]
+
+        hst_results.rename_column('sci_instrume', 'instrument')
+        hst_results.rename_column('sci_spec_1234', 'filters')
+        hst_results.rename_column('sci_actual_duration', 'exposure time')
+        hst_results.rename_column('sci_pep_id', 'PID')
+        hst_results.rename_column('sci_central_wavelength', 'central wavelength')
 
 
+        jwst_results.rename_column('instrume', 'instrument')
+        jwst_results.rename_column('opticalElements', 'filters')
+        jwst_results.rename_column('duration', 'exposure time')
+        jwst_results.rename_column('program', 'PID')
+
+
+        combined_arr = astropy.table.vstack([hst_results, jwst_results], join_type = 'outer')
 
 
     
