@@ -24,6 +24,25 @@ class Galaxy(object):
 
         return 
     
+    def set_observations(self, obs_table):
+        '''
+        Assigns observations Table to a given galaxy
+        '''
+        self.observations = obs_table 
+
+        return 
+
+    def make_filter_plot(self):
+
+        '''
+        Make a plot showing the throughput and filters available for a given galaxy
+        '''
+
+        obs_table = self.observations 
+
+
+        return 
+    
     def get_coords(self):
         '''
         Reads in arbitraily formated object coordinates and creates a SkyCoord object
