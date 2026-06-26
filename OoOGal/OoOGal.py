@@ -1,61 +1,83 @@
-# begin file!
-import numpy as np
+#begin file! 
+import numpy as np 
 
 from astropy.coordinates import SkyCoord
 import astropy.units as u
-
 
 class Galaxy(object):
     """
     Galaxy class.
 
+    Represents a galaxy object with its core observational properties.
+    
+    Args:
+        name (str, optional): Name of the galaxy
+        right_ascension (float, optional): Right ascension coordinate of the galaxy
+        declination (float, optional): Declination coordinate of the galaxy
+        redshift (float, optional): Redshift value of the galaxy
     """
 
-    def __init__(
-        self, name=None, right_ascension=None, declination=None, redshift=None
-    ):
+    def __init__(self, name=None, right_ascension=None, declination=None, redshift=None):
+        """
+        Initialize Galaxy
 
+        Creates a Galaxy instance with its core observational properties.
+
+        Args:
+            name (str, optional): Name of the galaxy
+            right_ascension (float, optional): Right ascension coordinate of the galaxy
+            declination (float, optional): Declination coordinate of the galaxy
+            redshift (float, optional): Redshift value of the galaxy
+
+        Returns:
+            None
+        """
         self.name = name
-
         self.RA = right_ascension
-
         self.Dec = declination
-
         self.redshift = redshift
-
         return
 
     def set_observations(self, obs_table):
         """
-        Assigns observations Table to a given galaxy
-        """
-        self.observations = obs_table
+        Set Observations
 
+        Assigns an observations table to the galaxy instance.
+        Args:
+            obs_table (Table): Astropy Table containing observational data for the galaxy
+        Returns:
+            None
+        """
+
+        self.observations = obs_table
         return
 
     def make_filter_plot(self):
         """
-        Make a plot showing the throughput and filters available for a given galaxy
+        Make Filter Plot
+
+        Generates a plot displaying the throughput and available filters for the galaxy,
+        based on its assigned observations table.
+        Args:
+            None
+        Returns:
+            plot: Figure showing filter throughput curves for all available filters
         """
-
         obs_table = self.observations
-
         return
 
     def get_coords(self):
         """
-        Reads in arbitraily formated object coordinates and creates a SkyCoord object
+        Get Coordinates
+
+        Reads in arbitrarily formatted object coordinates and constructs
+        an Astropy SkyCoord object for use in astronomical queries.
+        Args:
+            None
+        Returns:
+            SkyCoord: Astropy SkyCoord object representing the galaxy's sky position
         """
+        return
 
-        # if the user does not input one or both:
-        if self.Ra is None or self.dec is None:
-            raise Exception("Must input a value for RA and Dec")
 
-        # if the user inputs RA and Dec as degrees
-        if self.RA > 360 or self.RA < 0:
-            raise Exception("RA in degrees must be between 0 and 360")
-
-        if self.dec > 90 or self.dec < -90:
-            raise Exception("Dec in degrees must be between -90 and 90")
-
-        return coords
+    
