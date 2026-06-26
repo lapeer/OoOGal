@@ -97,12 +97,10 @@ def do_query_mast(Galaxy):
 
     hst_results.rename_column("sci_instrume", "instrument")
     hst_results.rename_column("sci_spec_1234", "filters")
-    # hst_results.rename_column("sci_actual_duration", "exposure time")
     hst_results.rename_column("sci_pep_id", "PID")
 
     jwst_results.rename_column("instrume", "instrument")
     jwst_results.rename_column("opticalElements", "filters")
-    # jwst_results.rename_column("duration", "exposure time")
     jwst_results.rename_column("program", "PID")
 
     combined_arr = astropy.table.vstack([hst_results, jwst_results], join_type="outer")
