@@ -22,6 +22,7 @@ def do_query_mast(Galaxy):
 
     Returns:
         Table: detailed information about the queried Galaxy object
+        file: .txt file containing the table in ascii format
     """
 
     mast = Mast()
