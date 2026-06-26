@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+pyproject.toml
+OoOGal/ALMA.py
+OoOGal/MAST.py
+OoOGal/OoOGal.py
+OoOGal/SDSS.py
+OoOGal/tests.py
+OoOGal.egg-info/PKG-INFO
+OoOGal.egg-info/SOURCES.txt
+OoOGal.egg-info/dependency_links.txt
+OoOGal.egg-info/requires.txt
+OoOGal.egg-info/top_level.txt

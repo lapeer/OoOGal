@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: OoOGal
+Version: 0.0.1
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: astroquery
+Requires-Dist: astropy
+Dynamic: license-file
