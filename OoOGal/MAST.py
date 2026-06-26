@@ -31,9 +31,10 @@ def do_query_mast(Galaxy):
     try:
         # first try to search by name
         # in case the input isn't a string
-        Galaxy.name = str(Galaxy.name)
-        mast.resolve_object(Galaxy.name, resolve_all=False)
-        name = Galaxy.name
+        targ_name = str(Galaxy.name)
+        mast.resolve_object(targ_name, resolve_all=False)
+        name = targ_name
+
     except Exception:
         # then try to search by coordinates if name fails
         name = Galaxy.get_coords()

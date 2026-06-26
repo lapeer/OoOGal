@@ -51,6 +51,11 @@ class Galaxy(object):
         if self.Ra is None or self.dec is None:
             raise Exception("Must input a value for RA and Dec")
 
-        # if the user inputs the
+        # if the user inputs RA and Dec as degrees
+        if self.RA > 360 or self.RA < 0:
+            raise Exception("RA in degrees must be between 0 and 360")
 
-        return
+        if self.dec > 90 or self.dec < -90:
+            raise Exception("Dec in degrees must be between -90 and 90")
+
+        return galaxy_name
