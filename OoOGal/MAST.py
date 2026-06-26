@@ -27,7 +27,7 @@ def do_query_mast(Galaxy):
 
     mast = Mast()
 
-    # get the name of the object (should be this??)
+    # get the name of the object or coords
     try:
         # first try to search by name
         # in case the input isn't a string
@@ -37,15 +37,7 @@ def do_query_mast(Galaxy):
 
     except Exception:
         # then try to search by coordinates if name fails
-        name = Galaxy.get_coords()
-
-    # # get the coords of the object
-    # try:
-    #     # first try to search by name
-    #     coords = mast.resolve_object(name, resolve_all=False)
-    # except:
-    #     # then try to search by coordinates if name fails
-    #     coords = Galaxy.get_coords()
+        coord = Galaxy.get_coords()
 
     results_arr = []
 

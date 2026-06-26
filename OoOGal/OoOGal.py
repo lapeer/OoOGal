@@ -58,4 +58,4 @@ class Galaxy(object):
         if self.dec > 90 or self.dec < -90:
             raise Exception("Dec in degrees must be between -90 and 90")
 
-        return galaxy_name
+        return coords
